@@ -1,27 +1,22 @@
-from task_1 import Book,Games,Computer  # TODO: импортируйте классы, созданные в ходе выполнения прошлого задания
+from task_1 import Fridge, Bed, Game
 
 if __name__ == "__main__":
-    book = Book('LD','Romance')
-    game = Games('Dota 2', 0)
-    computer = Computer('ASUS TUF', 'Asus')
-
- # TODO: инстанцировать все описанные классы, создав три объекта.C()
+    fridge = Fridge(True, 700, 4)
+    bed = Bed(False, False, 1)
+    game = Game(False, 268.38, 1)
 
     try:
-        book._genre_valid("Detective")
-     # TODO: вызвать метод с некорректными аргументами(b)
-    except TypeError:
+        fridge.add_food_to_fridge(-5)
+    except ValueError:
         print('Ошибка: неправильные данные')
 
     try:
-        game._title_valid("Assasin Creed")
-     # TODO: вызвать метод с некорректными аргументами(a)
-    except Error:
+        bed.add_pillows_on_bed(-5)
+    except ValueError:
         print('Ошибка: неправильные данные')
 
     try:
-
-        computer._model_valid("Acer")
-    # TODO: вызвать метод с некорректными аргументами(a)
-    except TypeError:
+        game.close_my_game()
+    except ValueError:
         print('Ошибка: неправильные данные')
+
