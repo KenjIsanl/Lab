@@ -23,11 +23,11 @@ class Book:
 class PaperBook(Book):
     def __init__(self, name: str, author: str, pages: int):
         super().__init__(name, author)
-        self.pages = pages
+        self._pages = pages
 
     @property
     def pages(self):
-        return self.pages
+        return self._pages
 
     @pages.setter
     def pages(self, pages_new):
@@ -44,11 +44,11 @@ class PaperBook(Book):
 class AudioBook(Book):
     def __init__(self, name: str, author: str, duration: float):
         super().__init__(name, author)
-        self.duration = duration
+        self._duration = duration
 
     @property
     def duration(self):
-        return self.duration
+        return self._duration
 
     @duration.setter
     def duration(self, value):
