@@ -3,7 +3,7 @@
 
 class Network:
     """Класс сеть"""
-    def __init__(self, name: str, year: int, is_work: bool):
+    def __init__(self, name: str, year: int, is_working: bool):
         """
         Создание объекта "Сеть"
 
@@ -14,12 +14,12 @@ class Network:
         """
         self._name = name
         self._year = year
-        self.is_work = is_work
+        self.is_working = is_working
 
     def turn_on(self):
         """Функция, которая включает сеть, если она выключена"""
-        if self.is_work is False:
-            self.is_work = True
+        if self.is_working is False:
+            self.is_working = True
 
     @property
     def name(self) -> str:
@@ -33,7 +33,7 @@ class Network:
 
     def __str__(self):
         """Магический-метод, который выводит результат экземпляра (для чтения)"""
-        return f"Социальная сеть: {self.name}. Год создания: {self.year}. Работает? {self.is_work}"
+        return f"Социальная сеть: {self.name}. Год создания: {self.year}. Работает? {self.is_working}"
 
     def __repr__(self):
         """Магический метод, который тоже выводит"""
@@ -50,13 +50,13 @@ print(repr(social))  # Проверка экземпляром: работа м�
 
 class Youtube(Network):
     """Класс Ютуб"""
-    def __init__(self, name: str, year: int, is_work: bool, video: str, video_duration: int):
+    def __init__(self, name: str, year: int, is_working: bool, video: str, video_duration: int):
         """
         Создание объекта "Сеть"
 
         :param name: название
         :param year: год создания
-        :param is_work: статус включен/выключен
+        :param is_working: статус включен/выключен
         :param video: какое видео включено
         :param video_duration: сколько минут видео длиться
         """
@@ -79,11 +79,11 @@ class Youtube(Network):
             raise ValueError("Продолжительность должна быть положительным числом")
         self._video_duration = value
 
-    def is_yt_work(self) -> bool:
-        return self.is_work
+    def is_yt_working(self) -> bool:
+        return self.is_working
 
     def __str__(self):
-        return f"Социальная сеть: {self.name}. Год создания: {self.year}. Работает? {self.is_work}. " \
+        return f"Социальная сеть: {self.name}. Год создания: {self.year}. Работает? {self.is_working}. " \
                f"Ролик: {self.video}. Продолжительность (минуты): {self._video_duration}"
 
 
