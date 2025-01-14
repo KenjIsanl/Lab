@@ -23,7 +23,7 @@ class Book:
 class PaperBook(Book):
     def __init__(self, name: str, author: str, pages: int):
         super().__init__(name, author)
-        self._pages = pages
+        self.pages = pages
 
     @property
     def pages(self):
@@ -35,7 +35,7 @@ class PaperBook(Book):
             raise TypeError("Количество страниц должно быть типа int")
         if pages_new <= 0:
             raise ValueError("Количество страниц должно быть положительным числом")
-        self._pages = pages_new
+        self.pages = pages_new
 
     def __str__(self):
         return f"Книга {self.name}. Автор {self.author}"
@@ -44,7 +44,7 @@ class PaperBook(Book):
 class AudioBook(Book):
     def __init__(self, name: str, author: str, duration: float):
         super().__init__(name, author)
-        self._duration = duration
+        self.duration = duration
 
     @property
     def duration(self):
